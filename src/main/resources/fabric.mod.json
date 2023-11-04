@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "arbiters_weapons",
+  "version": "${version}",
+  "name": "Arbiters Weapons",
+  "description": "Selection of weapons heavily inspired by the game Fell Seal:Arbiters Mark",
+  "authors": [
+    "Xanthian"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/arbiters_weapons/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": ["xanthian.arbiters_weapons.client.ArbitersWeaponsClient"],
+    "fabric-datagen": ["xanthian.arbiters_weapons.DataGenerator"],
+    "main": ["xanthian.arbiters_weapons.Initialise"]
+  },
+  "mixins": ["arbiters_weapons.mixins.json"],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "arbiters_weapons:swords/silver_sword",
+    "arbiters_weapons:swords/flamebrand",
+    "arbiters_weapons:swords/singing_sword",
+    "arbiters_weapons:swords/stonebrand",
+    "arbiters_weapons:swords/enhancer",
+    "arbiters_weapons:swords/charged_soul_eater",
+    "arbiters_weapons:swords/longsword",
+    "arbiters_weapons:swords/ebony_sword",
+    "arbiters_weapons:swords/dendrite_sword",
+    "arbiters_weapons:swords/teorite_sword",
+    "arbiters_weapons:swords/boltbrand",
+    "arbiters_weapons:swords/eternias",
+    "arbiters_weapons:swords/shortsword",
+    "arbiters_weapons:swords/toothed_sword",
+    "arbiters_weapons:swords/excalibur",
+    "arbiters_weapons:swords/guardian_sword",
+    "arbiters_weapons:swords/soul_eater",
+    "arbiters_weapons:swords/icebrand"
+  ]
+}
