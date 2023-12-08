@@ -4,7 +4,6 @@ import net.minecraft.entity.attribute.ClampedEntityAttribute;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-
 import xanthian.arbiters_weapons.Initialise;
 
 import java.util.LinkedHashMap;

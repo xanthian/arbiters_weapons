@@ -1,13 +1,15 @@
 package xanthian.arbiters_weapons.item.swords;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
-
 import xanthian.arbiters_weapons.item.custom.ModSwordItem;
 
 public class DendriteSword extends ModSwordItem {
@@ -18,14 +20,17 @@ public class DendriteSword extends ModSwordItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         World world = target.getWorld();
-        if ((!world.isClient) && (attacker.getMainHandStack().getItem() == this)) {
+        ServerWorld serverWorld = (ServerWorld) attacker.getWorld();
+        Item mainHand = attacker.getMainHandStack().getItem();
+        float baseDamage = (float) attacker.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+
+        if (!world.isClient && mainHand == this) {
             if (target.hasStatusEffect(StatusEffects.REGENERATION)) {
                 target.removeStatusEffect(StatusEffects.REGENERATION);
             }
             if (world.random.nextFloat() <= 0.2f && target.isUndead()) {
-                target.damage(target.getDamageSources().magic(), 8f);
-                world.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(),
-                        SoundEvents.ENTITY_GENERIC_BURN, SoundCategory.PLAYERS, 0.3f, 0.2f);
+                target.damage(target.getWorld().getDamageSources().magic(), baseDamage * 2);
+                serverWorld.playSoundFromEntity(null, target, SoundEvents.ENTITY_GENERIC_BURN, SoundCategory.PLAYERS, 0.9f, 1.2f);
             }
         }
         return super.postHit(stack, target, attacker);

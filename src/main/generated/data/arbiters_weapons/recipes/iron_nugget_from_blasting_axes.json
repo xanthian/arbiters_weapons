@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "arbiters_weapons:axes/battleaxe"
+    },
+    {
+      "item": "arbiters_weapons:axes/silver_axe"
+    },
+    {
+      "item": "arbiters_weapons:axes/chopper"
+    },
+    {
+      "item": "arbiters_weapons:axes/teorite_axe"
+    }
+  ],
+  "result": "minecraft:iron_nugget"
+}

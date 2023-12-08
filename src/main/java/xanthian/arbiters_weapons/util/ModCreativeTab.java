@@ -14,9 +14,6 @@ import java.util.Comparator;
 
 public class ModCreativeTab {
 
-    public static void registerGroup() {
-    }
-
     public static final ItemGroup AW_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Initialise.MOD_ID, "arbiters_weapons"),
             FabricItemGroup.builder().displayName(Text.literal("Arbiters Weapons"))
@@ -30,4 +27,7 @@ public class ModCreativeTab {
                                 .toList());
                     })
                     .build());
+
+    public static void registerGroup() {
+    }
 }

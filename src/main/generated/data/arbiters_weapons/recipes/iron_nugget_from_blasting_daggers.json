@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "arbiters_weapons:daggers/dagger"
+    },
+    {
+      "item": "arbiters_weapons:daggers/hidden_knife"
+    },
+    {
+      "item": "arbiters_weapons:daggers/dirk"
+    },
+    {
+      "item": "arbiters_weapons:daggers/teorite_dagger"
+    },
+    {
+      "item": "arbiters_weapons:daggers/tongueslicer"
+    },
+    {
+      "item": "arbiters_weapons:daggers/main_gauche"
+    },
+    {
+      "item": "arbiters_weapons:daggers/kunai"
+    },
+    {
+      "item": "arbiters_weapons:daggers/flash_knife"
+    }
+  ],
+  "result": "minecraft:iron_nugget"
+}

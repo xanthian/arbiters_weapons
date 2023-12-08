@@ -4,7 +4,6 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-
 import xanthian.arbiters_weapons.Initialise;
 import xanthian.arbiters_weapons.statuseffects.*;
 

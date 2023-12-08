@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "arbiters_weapons:axes/blood_axe",
+    "arbiters_weapons:axes/executioner",
+    "arbiters_weapons:axes/battleaxe",
+    "arbiters_weapons:axes/cry_havoc",
+    "arbiters_weapons:axes/teorite_axe",
+    "arbiters_weapons:axes/marauder_axe",
+    "arbiters_weapons:axes/dark_reign",
+    "arbiters_weapons:axes/silver_axe",
+    "arbiters_weapons:axes/chopper",
+    "arbiters_weapons:axes/ornate_axe"
+  ]
+}

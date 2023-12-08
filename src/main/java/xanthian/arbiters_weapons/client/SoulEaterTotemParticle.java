@@ -2,11 +2,14 @@ package xanthian.arbiters_weapons.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.AnimatedParticle;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleFactory;
+import net.minecraft.client.particle.SpriteProvider;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.DefaultParticleType;
 
-@Environment(value= EnvType.CLIENT)
+@Environment(value = EnvType.CLIENT)
 public class SoulEaterTotemParticle extends AnimatedParticle {
 
     SoulEaterTotemParticle(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, SpriteProvider spriteProvider) {
@@ -16,7 +19,7 @@ public class SoulEaterTotemParticle extends AnimatedParticle {
         this.velocityY = -velocityY;
         this.velocityZ = velocityZ;
         this.scale *= 1.5f;
-        this.maxAge = (int)(8.0 / (Math.random() * 0.8 + 0.2)) + 4;
+        this.maxAge = (int) (8.0 / (Math.random() * 0.8 + 0.2)) + 4;
         this.setSpriteForAge(spriteProvider);
     }
 

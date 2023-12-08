@@ -42,52 +42,52 @@ public class ModLootTables {
 
         LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) -> {
 
-            if(ABANDONED_MINESHAFT_ID.equals(id)) {
+            if (ABANDONED_MINESHAFT_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(SwordItems.SHORTSWORD))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f,2.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(FISHING_TREASURE_ID.equals(id)) {
+            if (FISHING_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.05f))
                         .with(ItemEntry.builder(SwordItems.SHORTSWORD))
                         .apply(SetDamageLootFunction.builder(UniformLootNumberProvider.create(0.0f, 0.25f)))
                         .apply(EnchantWithLevelsLootFunction.builder(ConstantLootNumberProvider.create(30.0f))
-                        .allowTreasureEnchantments());
+                                .allowTreasureEnchantments());
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(ABANDONED_MINESHAFT_ID.equals(id)) {
+            if (ABANDONED_MINESHAFT_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f))
                         .with(ItemEntry.builder(SwordItems.LONGSWORD))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f,2.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(FISHING_TREASURE_ID.equals(id)) {
+            if (FISHING_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.03f))
                         .with(ItemEntry.builder(SwordItems.LONGSWORD))
                         .apply(SetDamageLootFunction.builder(UniformLootNumberProvider.create(0.0f, 0.25f)))
                         .apply(EnchantWithLevelsLootFunction.builder(ConstantLootNumberProvider.create(30.0f))
-                        .allowTreasureEnchantments());
+                                .allowTreasureEnchantments());
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(ABANDONED_MINESHAFT_ID.equals(id)) {
+            if (ABANDONED_MINESHAFT_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.05f))
                         .with(ItemEntry.builder(SwordItems.TOOTHED_SWORD));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(WOODLAND_MANSION_ID.equals(id)) {
+            if (WOODLAND_MANSION_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f))
@@ -95,15 +95,15 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(STRAY_ID.equals(id)) {
+            if (STRAY_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f,0.01f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f, 0.01f))
                         .conditionally(KilledByPlayerLootCondition.builder())
                         .with(ItemEntry.builder(SwordItems.ICEBRAND));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(IGLOO_CHEST_ID.equals(id)) {
+            if (IGLOO_CHEST_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f))
@@ -111,31 +111,31 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(NETHER_BRIDGE_ID.equals(id)) {
+            if (NETHER_BRIDGE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.075f))
                         .with(ItemEntry.builder(SwordItems.FLAMEBRAND));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(BLAZE_ID.equals(id)) {
+            if (BLAZE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.03f,0.01f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.03f, 0.01f))
                         .conditionally(KilledByPlayerLootCondition.builder())
                         .with(ItemEntry.builder(SwordItems.FLAMEBRAND));
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(WITHER_SKELETON_ID.equals(id)) {
+            if (WITHER_SKELETON_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.05f,0.01f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.05f, 0.01f))
                         .conditionally(KilledByPlayerLootCondition.builder())
                         .with(ItemEntry.builder(SwordItems.STONEBRAND));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(DESERT_PYRAMID_ID.equals(id)) {
+            if (DESERT_PYRAMID_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f))
@@ -143,7 +143,7 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(CREEPER_ID.equals(id)) {
+            if (CREEPER_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.25f))
@@ -153,63 +153,63 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(RUINED_PORTAL_ID.equals(id)) {
+            if (RUINED_PORTAL_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.05f))
                         .with(ItemEntry.builder(SwordItems.ENHANCER));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(ENDER_DRAGON_ID.equals(id)) {
+            if (ENDER_DRAGON_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.5f,0.1f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.5f, 0.1f))
                         .conditionally(KilledByPlayerLootCondition.builder())
                         .with(ItemEntry.builder(SwordItems.ENHANCER));
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(PILLAGER_OUTPOST_ID.equals(id)) {
+            if (PILLAGER_OUTPOST_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.15f))
                         .with(ItemEntry.builder(SwordItems.EBONY_SWORD));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(PILLAGER_OUTPOST_ID.equals(id)) {
+            if (PILLAGER_OUTPOST_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.50f))
-                        .conditionally(TimeCheckLootCondition.create(BoundedIntUnaryOperator.create(12000,24000)).period(24000))
+                        .conditionally(TimeCheckLootCondition.create(BoundedIntUnaryOperator.create(12000, 24000)).period(24000))
                         .with(ItemEntry.builder(SwordItems.EBONY_SWORD));
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(GUARDIAN_ID.equals(id)) {
+            if (GUARDIAN_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.02f,0.01f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.02f, 0.01f))
                         .conditionally(KilledByPlayerLootCondition.builder())
                         .with(ItemEntry.builder(SwordItems.GUARDIAN_SWORD));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(ELDER_GUARDIAN_ID.equals(id)) {
+            if (ELDER_GUARDIAN_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f,0.01f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f, 0.01f))
                         .conditionally(KilledByPlayerLootCondition.builder())
                         .with(ItemEntry.builder(SwordItems.GUARDIAN_SWORD));
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(END_CITY_TREASURE_ID.equals(id)) {
+            if (END_CITY_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
                         .with(ItemEntry.builder(SwordItems.DENDRITE_SWORD));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(ANCIENT_CITY_ID.equals(id)) {
+            if (ANCIENT_CITY_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
@@ -217,14 +217,14 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(SHIPWRECK_TREASURE_ID.equals(id)) {
+            if (SHIPWRECK_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.01f))
                         .with(ItemEntry.builder(SwordItems.EXCALIBUR));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(END_CITY_TREASURE_ID.equals(id)) {
+            if (END_CITY_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
@@ -232,14 +232,14 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(SHIPWRECK_TREASURE_ID.equals(id)) {
+            if (SHIPWRECK_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.01f))
                         .with(ItemEntry.builder(SwordItems.ETERNIAS));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(ANCIENT_CITY_ID.equals(id)) {
+            if (ANCIENT_CITY_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
@@ -247,17 +247,17 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
-            if(BASTION_TREASURE_ID.equals(id)) {
+            if (BASTION_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.05f))
                         .with(ItemEntry.builder(SwordItems.SOUL_EATER));
                 tableBuilder.pool(poolBuilder.build());
             }
-            if(WARDEN_ID.equals(id)) {
+            if (WARDEN_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f,0.05f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f, 0.05f))
                         .conditionally(KilledByPlayerLootCondition.builder())
                         .with(ItemEntry.builder(SwordItems.SOUL_EATER));
                 tableBuilder.pool(poolBuilder.build());

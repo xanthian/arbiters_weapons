@@ -2,12 +2,11 @@ package xanthian.arbiters_weapons.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.DefaultParticleType;
 
-@Environment(value= EnvType.CLIENT)
+@Environment(value = EnvType.CLIENT)
 public class SoulEaterParticle extends AbstractSlowingParticle {
 
     private final SpriteProvider spriteProvider;
@@ -20,7 +19,7 @@ public class SoulEaterParticle extends AbstractSlowingParticle {
         this.velocityY = -velocityY;
         this.velocityZ = velocityZ;
         this.scale *= 1.5f;
-        this.maxAge = (int)(8.0 / (Math.random() * 0.8 + 0.2)) + 4;
+        this.maxAge = (int) (8.0 / (Math.random() * 0.8 + 0.2)) + 4;
         this.setSpriteForAge(spriteProvider);
     }
 
@@ -28,6 +27,11 @@ public class SoulEaterParticle extends AbstractSlowingParticle {
     public void tick() {
         super.tick();
         this.setSpriteForAge(this.spriteProvider);
+    }
+
+    @Override
+    public ParticleTextureSheet getType() {
+        return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
     }
 
     @Environment(value = EnvType.CLIENT)
@@ -45,9 +49,5 @@ public class SoulEaterParticle extends AbstractSlowingParticle {
             soulParticle.setAlpha(1.0f);
             return soulParticle;
         }
-    }
-    @Override
-    public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
     }
 }

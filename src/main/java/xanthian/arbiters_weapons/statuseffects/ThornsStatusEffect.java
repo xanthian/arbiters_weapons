@@ -16,9 +16,8 @@ public class ThornsStatusEffect extends StatusEffect {
         if (!livingEntity.getWorld().isClient()) {
             Entity attacker = livingEntity.getAttacker();
 
-            // if hit
             if (livingEntity.hurtTime == 9) {
-                if (attacker != null){
+                if (attacker != null) {
                     World world = attacker.getWorld();
                     attacker.damage(world.getDamageSources().thorns(livingEntity), amplifier + 2);
                 }

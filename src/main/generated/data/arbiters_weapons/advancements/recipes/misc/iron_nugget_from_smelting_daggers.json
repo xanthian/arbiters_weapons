@@ -1,0 +1,126 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dagger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/dagger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_dirk": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/dirk"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_flash_knife": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/flash_knife"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_hidden_knife": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/hidden_knife"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kunai": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/kunai"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_main_gauche": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/main_gauche"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_teorite_dagger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/teorite_dagger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:iron_nugget_from_smelting_daggers"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tongueslicer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:daggers/tongueslicer"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_dagger",
+      "has_hidden_knife",
+      "has_dirk",
+      "has_teorite_dagger",
+      "has_main_gauche",
+      "has_tongueslicer",
+      "has_kunai",
+      "has_flash_knife",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:iron_nugget_from_smelting_daggers"
+    ]
+  },
+  "sends_telemetry_event": false
+}

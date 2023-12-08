@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
-
 import xanthian.arbiters_weapons.item.custom.ModSwordItem;
 
 public class GuardianSword extends ModSwordItem {
     public GuardianSword(ToolMaterial toolMaterial, int attackDamage, float attackSpeed) {
         super(toolMaterial, attackDamage, attackSpeed);
     }
+
     @Override
     public Rarity getRarity(ItemStack stack) {
         return Rarity.RARE;
@@ -22,7 +22,7 @@ public class GuardianSword extends ModSwordItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (!world.isClient && (entity instanceof LivingEntity livingEntity) && (livingEntity.getMainHandStack().getItem() == this)) {
+        if (!world.isClient && entity instanceof LivingEntity livingEntity && livingEntity.getMainHandStack().getItem() == this) {
             if (livingEntity.age % 60 == 0) {
                 livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,
                         80, 0, true, false, true));

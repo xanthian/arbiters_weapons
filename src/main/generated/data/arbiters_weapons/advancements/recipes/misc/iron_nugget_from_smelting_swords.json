@@ -99,7 +99,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:iron_nugget_from_smelting"
+        "recipe": "minecraft:iron_nugget_from_smelting_swords"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -132,7 +132,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:iron_nugget_from_smelting"
+      "minecraft:iron_nugget_from_smelting_swords"
     ]
   },
   "sends_telemetry_event": false

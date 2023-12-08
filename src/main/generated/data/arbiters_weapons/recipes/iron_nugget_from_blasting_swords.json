@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "arbiters_weapons:swords/shortsword"
+    },
+    {
+      "item": "arbiters_weapons:swords/longsword"
+    },
+    {
+      "item": "arbiters_weapons:swords/silver_sword"
+    },
+    {
+      "item": "arbiters_weapons:swords/teorite_sword"
+    },
+    {
+      "item": "arbiters_weapons:swords/toothed_sword"
+    },
+    {
+      "item": "arbiters_weapons:swords/icebrand"
+    },
+    {
+      "item": "arbiters_weapons:swords/flamebrand"
+    },
+    {
+      "item": "arbiters_weapons:swords/boltbrand"
+    },
+    {
+      "item": "arbiters_weapons:swords/enhancer"
+    }
+  ],
+  "result": "minecraft:iron_nugget"
+}

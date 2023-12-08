@@ -1,9 +1,9 @@
 package xanthian.arbiters_weapons;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.minecraft.util.Identifier;
-
+import xanthian.arbiters_weapons.item.AxeItems;
+import xanthian.arbiters_weapons.item.DaggerItems;
 import xanthian.arbiters_weapons.item.SwordItems;
 import xanthian.arbiters_weapons.util.*;
 
@@ -21,6 +21,8 @@ public class Initialise implements ModInitializer {
         ModAttributes.registerAttributes();
         ModStatusEffects.registerStatusEffects();
         SwordItems.registerSwordItems();
+        DaggerItems.registerDaggerItems();
+        AxeItems.registerAxeItems();
         ModCreativeTab.registerGroup();
         ModParticles.registerParticles();
         ModLootTables.modifyLootTables();

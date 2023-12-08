@@ -19,16 +19,17 @@ public class CharmedStatusEffect extends StatusEffect {
             ((MobEntity) entity).setAiDisabled(true);
             entity.getWorld().playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.NEUTRAL, 0.3F, 1.0F);
         }
-            super.onApplied(entity, attributes, amplifier);
+        super.onApplied(entity, attributes, amplifier);
     }
+
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
         if (entity instanceof MobEntity) {
             ((MobEntity) entity).setAiDisabled(false);
-
         }
-            super.onApplied(entity, attributes, amplifier);
+        super.onApplied(entity, attributes, amplifier);
     }
+
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         super.applyUpdateEffect(entity, amplifier);

@@ -1,0 +1,139 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_boltbrand": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/boltbrand"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_enhancer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/enhancer"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_flamebrand": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/flamebrand"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_icebrand": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/icebrand"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_longsword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/longsword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_shortsword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/shortsword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_silver_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/silver_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_teorite_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/teorite_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:iron_nugget_from_blasting_swords"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_toothed_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:swords/toothed_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_shortsword",
+      "has_longsword",
+      "has_silver_sword",
+      "has_teorite_sword",
+      "has_toothed_sword",
+      "has_icebrand",
+      "has_flamebrand",
+      "has_boltbrand",
+      "has_enhancer",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:iron_nugget_from_blasting_swords"
+    ]
+  },
+  "sends_telemetry_event": false
+}

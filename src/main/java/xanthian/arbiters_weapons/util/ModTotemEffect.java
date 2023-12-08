@@ -3,7 +3,6 @@ package xanthian.arbiters_weapons.util;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
@@ -15,7 +14,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-
 import xanthian.arbiters_weapons.Initialise;
 
 public final class ModTotemEffect {
@@ -43,7 +41,8 @@ public final class ModTotemEffect {
         ClientWorld clientWorld = minecraftClient.world;
 
         if (clientWorld != null) {
-            clientWorld.playSound(entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ITEM_TOTEM_USE, entity.getSoundCategory(), 1.0f, 1.0f, false);
+            clientWorld.playSound(entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ITEM_TOTEM_USE, entity.getSoundCategory(),
+                    1.0f, 1.0f, false);
         }
 
         if (entity == minecraftClient.player) {

@@ -21,15 +21,20 @@ public class ArbitersWeaponsClient implements ClientModInitializer {
     }
 
     private void registerParticleFactories() {
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BLEED_PARTICLE, BleedParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.ROOT_PARTICLE, RootParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.SOUL_EATER_PARTICLE, SoulEaterParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.SOUL_EATER_TOTEM_PARTICLE, SoulEaterTotemParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.SILENCE_PARTICLE, SilenceParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.SLEEP_PARTICLE, SleepParticle.Factory::new);
     }
+
     private void registerTotemPacket() {
         ClientPlayNetworking.registerGlobalReceiver(ModTotemEffect.TOTEM_EFFECT_PACKET, (client, handler, buf, responseSender) -> {
             ItemStack itemStack = buf.readItemStack();
             assert client.world != null;
             Entity entity = client.world.getEntityById(buf.readInt());
-                client.execute(() -> ModTotemEffect.playActivateAnimation(itemStack, entity, ModParticles.SOUL_EATER_TOTEM_PARTICLE));
+            client.execute(() -> ModTotemEffect.playActivateAnimation(itemStack, entity, ModParticles.SOUL_EATER_TOTEM_PARTICLE));
         });
     }
 }

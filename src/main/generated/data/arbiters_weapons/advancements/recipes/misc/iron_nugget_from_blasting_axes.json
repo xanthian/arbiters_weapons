@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_battleaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:axes/battleaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_chopper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:axes/chopper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_silver_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:axes/silver_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_teorite_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "arbiters_weapons:axes/teorite_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:iron_nugget_from_blasting_axes"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_battleaxe",
+      "has_silver_axe",
+      "has_chopper",
+      "has_teorite_axe",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:iron_nugget_from_blasting_axes"
+    ]
+  },
+  "sends_telemetry_event": false
+}
