@@ -25,7 +25,8 @@ public class Initialise implements ModInitializer {
         AxeItems.registerAxeItems();
         ModCreativeTab.registerGroup();
         ModParticles.registerParticles();
-        ModLootTables.modifyLootTables();
+        ModLootTables.modifySwordLootTables();
+        ModLootTables.modifyAxeLootTables();
 
     }
 }

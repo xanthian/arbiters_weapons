@@ -11,6 +11,7 @@ import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
+import xanthian.arbiters_weapons.item.AxeItems;
 import xanthian.arbiters_weapons.item.SwordItems;
 
 public class ModLootTables {
@@ -18,13 +19,18 @@ public class ModLootTables {
     public static final Identifier ABANDONED_MINESHAFT_ID = new Identifier("minecraft", "chests/abandoned_mineshaft");
     public static final Identifier ANCIENT_CITY_ID = new Identifier("minecraft", "chests/ancient_city");
     public static final Identifier BASTION_TREASURE_ID = new Identifier("minecraft", "chests/bastion_treasure");
+    public static final Identifier BASTION_HOGLIN_STABLE_ID = new Identifier("minecraft", "chests/bastion_hoglin_stable");
     public static final Identifier DESERT_PYRAMID_ID = new Identifier("minecraft", "chests/desert_pyramid");
     public static final Identifier END_CITY_TREASURE_ID = new Identifier("minecraft", "chests/end_city_treasure");
     public static final Identifier IGLOO_CHEST_ID = new Identifier("minecraft", "chests/igloo_chest");
+    public static final Identifier JUNGLE_TEMPLE_ID = new Identifier("minecraft", "chests/jungle_temple");
     public static final Identifier NETHER_BRIDGE_ID = new Identifier("minecraft", "chests/nether_bridge");
     public static final Identifier PILLAGER_OUTPOST_ID = new Identifier("minecraft", "chests/pillager_outpost");
     public static final Identifier RUINED_PORTAL_ID = new Identifier("minecraft", "chests/ruined_portal");
+    public static final Identifier SIMPLE_DUNGEON_ID = new Identifier("minecraft", "chests/simple_dungeon");
     public static final Identifier SHIPWRECK_TREASURE_ID = new Identifier("minecraft", "chests/shipwreck_treasure");
+    public static final Identifier UNDERWATER_RUIN_BIG_ID = new Identifier("minecraft", "chests/underwater_ruin_big");
+    public static final Identifier UNDERWATER_RUIN_SMALL_ID = new Identifier("minecraft", "chests/underwater_ruin_small");
     public static final Identifier WOODLAND_MANSION_ID = new Identifier("minecraft", "chests/woodland_mansion");
 
     public static final Identifier FISHING_TREASURE_ID = new Identifier("minecraft", "gameplay/fishing/treasure");
@@ -32,13 +38,19 @@ public class ModLootTables {
     public static final Identifier BLAZE_ID = new Identifier("minecraft", "entities/blaze");
     public static final Identifier CREEPER_ID = new Identifier("minecraft", "entities/creeper");
     public static final Identifier ENDER_DRAGON_ID = new Identifier("minecraft", "entities/ender_dragon");
+    public static final Identifier ENDERMAN_ID = new Identifier("minecraft", "entities/enderman");
+    public static final Identifier GHAST_ID = new Identifier("minecraft", "entities/ghast");
     public static final Identifier GUARDIAN_ID = new Identifier("minecraft", "entities/guardian");
     public static final Identifier ELDER_GUARDIAN_ID = new Identifier("minecraft", "entities/elder_guardian");
+    public static final Identifier PIGLIN_BRUTE_ID = new Identifier("minecraft", "entities/piglin_brute");
+    public static final Identifier RAVAGER_ID = new Identifier("minecraft", "entities/ravager");
     public static final Identifier STRAY_ID = new Identifier("minecraft", "entities/stray");
+    public static final Identifier VINDICATOR_ID = new Identifier("minecraft", "entities/vindicator");
     public static final Identifier WARDEN_ID = new Identifier("minecraft", "entities/warden");
+    public static final Identifier WITHER_ID = new Identifier("minecraft", "entities/wither");
     public static final Identifier WITHER_SKELETON_ID = new Identifier("minecraft", "entities/wither_skeleton");
 
-    public static void modifyLootTables() {
+    public static void modifySwordLootTables() {
 
         LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) -> {
 
@@ -217,6 +229,15 @@ public class ModLootTables {
                 tableBuilder.pool(poolBuilder.build());
             }
 
+            if (GHAST_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.05f, 0.05f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(SwordItems.SINGING_SWORD));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
             if (SHIPWRECK_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
@@ -264,5 +285,133 @@ public class ModLootTables {
             }
 
         }));
+    }
+
+    public static void modifyAxeLootTables() {
+
+        LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) -> {
+
+            if (JUNGLE_TEMPLE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(AxeItems.BATTLEAXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (JUNGLE_TEMPLE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .with(ItemEntry.builder(AxeItems.SILVER_AXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (SIMPLE_DUNGEON_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(AxeItems.SILVER_AXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (UNDERWATER_RUIN_BIG_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .with(ItemEntry.builder(AxeItems.CHOPPER));
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (WOODLAND_MANSION_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .with(ItemEntry.builder(AxeItems.CHOPPER));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (RAVAGER_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f, 0.05f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(AxeItems.BLOOD_AXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (WOODLAND_MANSION_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .with(ItemEntry.builder(AxeItems.BLOOD_AXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (PIGLIN_BRUTE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.05f, 0.02f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(AxeItems.MARAUDER_AXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (VINDICATOR_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.05f, 0.02f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(AxeItems.MARAUDER_AXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (PIGLIN_BRUTE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.05f, 0.02f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(AxeItems.ORNATE_AXE));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (ENDERMAN_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.01f, 0.05f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(AxeItems.DARK_REIGN));
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (END_CITY_TREASURE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.03f))
+                        .with(ItemEntry.builder(AxeItems.DARK_REIGN));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (WITHER_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.1f, 0.05f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(AxeItems.EXECUTIONER));
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (NETHER_BRIDGE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.01f))
+                        .with(ItemEntry.builder(AxeItems.EXECUTIONER));
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (ENDER_DRAGON_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.05f, 0.01f))
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .with(ItemEntry.builder(AxeItems.CRY_HAVOC));
+                tableBuilder.pool(poolBuilder.build());
+            }
+        }));
+
     }
 }
